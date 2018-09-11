@@ -12,11 +12,7 @@
         $belajar_mandiri = $_POST['belajar_mandiri'];
 
         
-        $sql = "INSERT INTO biodata (pengalaman_kelas, pengalaman_lab, pengalaman_masyarakat, pengalaman_magang, pengalaman_organisasi, pengalaman_kampus, belajar_mandiri) 
-            VALUES('$pengalaman_kelas', '$pengalaman_lab', '$pengalaman_masyarakat', '$pengalaman_magang', '$pengalaman_organisasi', '$pengalaman_kampus', '$belajar_mandiri')";
-       echo "<pre>";
-       print_r($sql);
-       die();
+        $sql = "UPDATE biodata SET pengalaman_kelas='$pengalaman_kelas', pengalaman_lab='$pengalaman_lab', pengalaman_masyarakat='$pengalaman_masyarakat', pengalaman_organisasi='$pengalaman_organisasi, pengalaman_kampus='$pengalaman_kampus', belajar_mandiri='$belajar_mandiri' WHERE id=$id";
        if ($data->simpanData($sql)) {
         header("location: step4.php?email=$email");
     } 
